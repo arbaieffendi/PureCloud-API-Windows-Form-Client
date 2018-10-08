@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Configuration;
 
 namespace BasicPureCloudInWindowsForm
 {
@@ -14,16 +15,16 @@ namespace BasicPureCloudInWindowsForm
     /// Description : Authentication Page
     public partial class LoginForm : Form
     {
-        public string environment = "mypurecloud.jp";
-        public string clientid = "87c48ac3-b31a-4faa-ae6f-06f4d0245004";
-        public string redirect_uri = "https://121219201303.ip-dynamic.com/axitswebapi/OAuth/Callback";
+        public string environment = ConfigurationManager.AppSettings["environment"];
+        public string client_id = ConfigurationManager.AppSettings["client_id"];
+        public string redirect_uri = ConfigurationManager.AppSettings["redirect_uri"];
 
         public LoginForm()
         {
             InitializeComponent();
 
             URLTextbox.Text =
-                $"https:\\\\login.{environment}\\oauth\\authorize?client_id={clientid}&response_type=token&redirect_uri={redirect_uri}";
+                $"https:\\\\login.{environment}\\oauth\\authorize?client_id={client_id}&response_type=token&redirect_uri={redirect_uri}";
         }
         
         private void getAccessTokenButton_Click_1(object sender, EventArgs e)
@@ -65,7 +66,7 @@ namespace BasicPureCloudInWindowsForm
         private void popUpLoginButton_Click(object sender, EventArgs e)
         {
             urlHashTextbox.Text = null;
-            using (LoginOAuthPopUp loginOAuthPopUp = new LoginOAuthPopUp(environment, clientid, redirect_uri))
+            using (LoginOAuthPopUp loginOAuthPopUp = new LoginOAuthPopUp(environment, client_id, redirect_uri))
             {
                 if (loginOAuthPopUp.ShowDialog() == DialogResult.OK)
                 {
