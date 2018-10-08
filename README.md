@@ -21,6 +21,6 @@ Create App.Config file and fill the value with your setting
 
 ### Prerequisites Recommendation
 
-.NET Framework 4.6.2
-PureCloudPlatform.Client.V2 SDK version 41.0.0
-ININ.PureCloud.OAuthControl (Optional)
+* .NET Framework 4.6.2
+* PureCloudPlatform.Client.V2 SDK version 41.0.0
+* ININ.PureCloud.OAuthControl (Optional)
