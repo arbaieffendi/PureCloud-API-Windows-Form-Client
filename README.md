@@ -1,8 +1,6 @@
 # BasicPureCloudInWindowsForm
 
-This apps is a basic client to integrate with PureCloud API (.NET SDK)
-
-
+This apps is a basic client sample for integration testing purpose with PureCloud API (.NET SDK)
 
 ## Getting Started
 Create App.Config file and fill the value with your setting
