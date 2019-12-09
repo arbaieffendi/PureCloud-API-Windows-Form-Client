@@ -1,7 +1,7 @@
 # BasicPureCloudInWindowsForm
 
-This apps is a basic client sample for integration testing purpose with PureCloud API (.NET SDK).
-Build in C# Windows Form. The essential API to create and subscribe an outbound call are there.
+I create this client app sample when integrating a C# Windows Form based-app with PureCloud API (.NET SDK).
+The essential API to create and subscribe an outbound call are demonstrate there.
 
 ## Getting Started
 Create App.Config file and fill the value with your setting
